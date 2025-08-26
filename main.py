@@ -48,7 +48,9 @@ class StandupModal(discord.ui.Modal, title="Daily Standup"):
 
 @bot.event
 async def on_ready():
+    await bot.tree.sync()
     print(f"Logged in as {bot.user}")
+
 
 
 @bot.tree.command(name="standup", description="Fill out your daily standup")
